@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: c0lornote-db
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    environment:
+      - MONGO_INITDB_DATABASE=c0lornote
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    container_name: c0lornote-backend
+    ports:
+      - "5000:5000"
+    environment:
+      - MONGODB_URI=mongodb://mongodb:27017/c0lornote
+      - JWT_SECRET=your_jwt_secret_change_this
+      - PORT=5000
+    depends_on:
+      - mongodb
+    volumes:
+      - ./server:/app/server
+      - ./server.js:/app/server.js
+
+  frontend:
+    build:
+      context: ./client
+      dockerfile: Dockerfile.frontend
+    container_name: c0lornote-frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+
+volumes:
+  mongodb_data:

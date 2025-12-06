@@ -19,8 +19,20 @@ c0lornote is a vibrant, colorful social networking platform where users can shar
 
 - Node.js (v14 or higher)
 - MongoDB (local or cloud instance)
+- Docker (optional, for containerized deployment)
 
-### Installation
+### Quick Start with Script
+
+```bash
+git clone https://github.com/rollandinho/c0lornote.git
+cd c0lornote
+chmod +x setup.sh
+./setup.sh
+```
+
+Then follow the on-screen instructions.
+
+### Manual Installation
 
 1. **Clone the repository**
    ```bash
@@ -71,6 +83,36 @@ c0lornote is a vibrant, colorful social networking platform where users can shar
 7. **Access the application**
    - Frontend: http://localhost:3000
    - Backend API: http://localhost:5000
+
+### 🐳 Docker Deployment
+
+The easiest way to run c0lornote is with Docker:
+
+```bash
+# Start all services (MongoDB, Backend, Frontend)
+docker-compose up -d
+
+# View logs
+docker-compose logs -f
+
+# Stop all services
+docker-compose down
+```
+
+Access the application at:
+- Frontend: http://localhost:3000
+- Backend API: http://localhost:5000
+- MongoDB: localhost:27017
+
+### 🧪 Testing the API
+
+After starting the server, you can test the API:
+
+```bash
+node test-api.js
+```
+
+This will run automated tests on the main API endpoints.
 
 ## 📖 API Documentation
 
