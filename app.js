@@ -96,7 +96,12 @@ function postNote() {
     const content = contentInput.value.trim();
     
     if (!content) {
-        alert('Please write something in your note!');
+        contentInput.style.borderColor = '#FF6B6B';
+        contentInput.placeholder = 'Please write something in your note!';
+        setTimeout(() => {
+            contentInput.style.borderColor = '';
+            contentInput.placeholder = 'Write your colorful note...';
+        }, 2000);
         return;
     }
     
