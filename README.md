@@ -104,6 +104,18 @@ Access the application at:
 - Backend API: http://localhost:5000
 - MongoDB: localhost:27017
 
+### 🌱 Seed Sample Data
+
+To populate your database with sample data for testing:
+
+```bash
+npm run seed
+```
+
+This creates sample users (alice, bob, charlie) and notes. You can login with:
+- Username: alice, bob, or charlie
+- Password: password123
+
 ### 🧪 Testing the API
 
 After starting the server, you can test the API:
