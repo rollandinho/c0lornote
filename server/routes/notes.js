@@ -1,11 +1,12 @@
 const express = require('express');
 const router = express.Router();
 const auth = require('../middleware/auth');
+const { createLimiter } = require('../middleware/rateLimiter');
 const Note = require('../models/Note');
 const User = require('../models/User');
 
 // Create a new note
-router.post('/', auth, async (req, res) => {
+router.post('/', auth, createLimiter, async (req, res) => {
   try {
     const { content, color, backgroundColor, tags, isPublic } = req.body;
 
@@ -200,7 +201,7 @@ router.delete('/:id/like', auth, async (req, res) => {
 });
 
 // Add comment
-router.post('/:id/comments', auth, async (req, res) => {
+router.post('/:id/comments', auth, createLimiter, async (req, res) => {
   try {
     const { text } = req.body;
     const note = await Note.findById(req.params.id);

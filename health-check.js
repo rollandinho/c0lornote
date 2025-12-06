@@ -55,7 +55,7 @@ function checkEndpoint(url) {
 
 async function runHealthChecks() {
   console.log('🏥 c0lornote Health Check\n');
-  console.log('=' .repeat(50));
+  console.log('='.repeat(50));
 
   let allPassed = true;
 
@@ -73,7 +73,7 @@ async function runHealthChecks() {
     }
   }
 
-  console.log('=' .repeat(50));
+  console.log('='.repeat(50));
 
   if (allPassed) {
     console.log('\n✨ All systems operational!\n');
