@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>c0lornote - A New Way of Interacting</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>c0lornote</h1>
+            <p class="tagline">WELCOME TO A NEW WAY OF INTERACTING WITH YOUR PEOPLE</p>
+        </header>
+
+        <main>
+            <section class="create-note">
+                <h2>Share Your Thoughts</h2>
+                <div class="note-form">
+                    <input type="text" id="author-name" placeholder="Your name" maxlength="30">
+                    <textarea id="note-content" placeholder="Write your colorful note..." maxlength="280"></textarea>
+                    <div class="color-picker">
+                        <label>Choose your color:</label>
+                        <div class="colors">
+                            <button class="color-btn" data-color="#FF6B6B" style="background-color: #FF6B6B;"></button>
+                            <button class="color-btn" data-color="#4ECDC4" style="background-color: #4ECDC4;"></button>
+                            <button class="color-btn" data-color="#45B7D1" style="background-color: #45B7D1;"></button>
+                            <button class="color-btn" data-color="#FFA07A" style="background-color: #FFA07A;"></button>
+                            <button class="color-btn" data-color="#98D8C8" style="background-color: #98D8C8;"></button>
+                            <button class="color-btn active" data-color="#F7DC6F" style="background-color: #F7DC6F;"></button>
+                            <button class="color-btn" data-color="#BB8FCE" style="background-color: #BB8FCE;"></button>
+                            <button class="color-btn" data-color="#85C1E2" style="background-color: #85C1E2;"></button>
+                        </div>
+                    </div>
+                    <button id="post-note" class="btn-primary">Post Note</button>
+                </div>
+            </section>
+
+            <section class="notes-feed">
+                <h2>Community Notes</h2>
+                <div id="notes-container" class="notes-grid">
+                    <!-- Notes will be dynamically added here -->
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Built by the people, for the people 💚</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
